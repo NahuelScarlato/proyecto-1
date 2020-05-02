@@ -75,16 +75,16 @@ function startTimer() {
             timerDisplay.innerHTML = timerSec+'.'+timerHundSec;
 
             if(timerHundSec==0) {
-                if(timerSec==0)
+                if(timerSec==0) {
                     clearInterval(timer);
+                    hideGame();
+                }
                 else
                     timerSec--;
-                
                 timerHundSec=9;
             }
-            else {
+            else
                 timerHundSec--;
-            }
         }
         ,100);
 }

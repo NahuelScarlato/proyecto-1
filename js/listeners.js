@@ -6,8 +6,7 @@ function startGame() {
     startTimer();
 }
 
-var playButton = document.getElementById("play");
-
+playButton = document.getElementById("play");
 playButton.addEventListener("click", startGame);
 
 //Listener del input para respuestas
@@ -23,3 +22,6 @@ function sendAnswer(event) {
         document.getElementById('answer').value = "";
     }
 }
+
+answerInput = document.getElementById('answer');
+answerInput.addEventListener("keyup", sendAnswer);

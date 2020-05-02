@@ -9,3 +9,7 @@ html, body {
     background-image: url(http://fondopantalla.com.es/file/395/1400x1050/crop/fondo-de-pantalla-n%C3%BAmeros-iluminados.jpg);
     background-size: cover;
 }
+
+#operations-panel {
+    font-size: 32px!important;
+}
