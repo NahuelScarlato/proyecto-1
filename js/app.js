@@ -15,17 +15,6 @@ function randomOperator() {
     return operands[rngInRange(0,4)]
 }
 
-//Crea una operacion sencilla de forma aleatoria
-function createRandomOperation() {
-    firstOperand = document.getElementById('1st-operand');
-    operator = document.getElementById('operator');
-    secondOperand = document.getElementById('2nd-operand');
-
-    firstOperand.innerHTML = rngInRange(0,51);
-    operator.innerHTML = randomOperator();
-    secondOperand.innerHTML = rngInRange(1,11);
-}
-
 //Limpiar el puntaje
 function resetScore() {
     correctAnswers = 0;
@@ -48,16 +37,22 @@ function addWrongAnswer() {
     document.getElementById('wrong-answers').innerHTML = ++wrongAnswers;
 }
 
-//Evaluar respuesta
-function answerIsCorrect() {
-    firstOperandValue = document.getElementById('1st-operand').innerHTML;
-    operatorValue = document.getElementById('operator').innerHTML;
-    secondOperandValue = document.getElementById('2nd-operand').innerHTML;
-    answerValue = document.getElementById('answer').value;
-    correctAnswer = eval(firstOperandValue+operatorValue+secondOperandValue);
+//Actualiza el puntaje
+function updateScores(answer) {
+    if(answer)
+        addCorrectAnswer();
+    else
+        addWrongAnswer();
+}
 
-    answerValueRounded = parseFloat(answerValue).toFixed(1);
+//Evalua la respuesta
+function answerIsCorrect(operation, solution) {
+    correctAnswer = eval(operation);
+    
+    answerValueRounded = parseFloat(solution).toFixed(1);
     correctAnswerRounded = parseFloat(correctAnswer).toFixed(1);
+
+    updateSolution(correctAnswerRounded);
 
     return correctAnswerRounded == answerValueRounded;
 }
@@ -78,6 +73,7 @@ function startTimer() {
                 if(timerSec==0) {
                     clearInterval(timer);
                     hideGame();
+                    showButtonPanel();
                 }
                 else
                     timerSec--;

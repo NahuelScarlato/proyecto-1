@@ -29,30 +29,38 @@
           <h1 class="display-3">Gotta math fast!</h1>
           <p class="lead">
             Solve as much operations as you can<br>
-            Validation will be rounded to one decimal value
+            (Validation will be rounded to one decimal value)
           </p>
           <div id="button-panel">
             <button id="play" type="button" class="btn btn-success btn-lg font-weight-bold">Play<i class="fas fa-play pl-3"></i></button>
           </div>
           <div id="game-panel" class="d-none">
-            <h1 id="timer" class="m-3">TIMER</h1>
-            <div id="operations-panel" class="m-3">
-              <span id="1st-operand" class="d-inline">1</span>
-              <span id="operator" class="d-inline">+</span>
-              <span id="2nd-operand" class="d-inline">1</span>
-              <span id="equal" class="d-inline">=</span>
-              <input id="answer" class="d-inline w-25 text-center" placeholder="Answer"></input>
+            <div id="scores">
+              <div class="row">
+                <h2 class="text-success col">Correct</h2>
+                <div id="operation-panel" class="col-6">
+                  <div class="badge badge-secondary text-wrap p-1 pb-2">
+                    <h3 id="new-op" class="d-inline"></h3>
+                    <h3 class="d-inline"> = </h3>
+                  </div>
+                  <input id="answer" class="d-inline w-25 text-center border-0 rounded p-1" placeholder="Answer"></input>
+                </div>
+                <h2 class="text-danger col">Wrong</h2>
+              </div>
+              <div class="row">
+                <h3 id="correct-answers" class="text-secondary col"></h3>
+                <div id="previous-panel" class="col-6 invisible">
+                  <div class="badge badge-secondary text-wrap">
+                    <h4 id="previous-op" class="d-inline"></h4>
+                  </div>
+                  <div class="badge badge-success text-wrap">
+                    <h4 id="true-answer" class="d-inline"></h4>
+                  </div>
+                </div>
+                <h3 id="wrong-answers" class="text-secondary col"></h3>
+              </div>
             </div>
-            <table id="scores">
-              <tr>
-                <th class="text-success pr-2" scope="row"><h3>Correct</h3></th>
-                <td id="correct-answers">CorrectValue</td>
-              </tr>
-              <tr>
-                <th class="text-danger pr-2" scope="row"><h3>Wrong</h3></th>
-                <td id="wrong-answers">WrongValue</td>
-              </tr>
-            </table>
+            <h1 id="timer" class="m-3"></h1>
           </div>
         </div>
         <div class="d-block p-1">
