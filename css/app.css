@@ -13,3 +13,7 @@ html, body {
 #answer {
     font-size: x-large;
 }
+
+.jumbotron {
+    margin: auto;
+}

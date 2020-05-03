@@ -28,3 +28,17 @@ function sendAnswer(event) {
 
 answerInput = document.getElementById('answer');
 answerInput.addEventListener('keyup', sendAnswer);
+
+//Restringe la escritura de las respuestas a solo floats
+$('#answer').keypress(function(event) {
+    if ((event.which != 46 || $(this).val().indexOf('.') != -1)
+        && (event.which < 48 || event.which > 57)
+        || (event.which == 46 && $(this).caret().start == 0))
+        event.preventDefault();
+  
+    //Este evento elimina los casos en que el punto (.) acaba en la posicion mas a la izq
+    $('#answer').keyup(function(e) {
+      if ($(this).val().indexOf('.') == 0) 
+        $(this).val($(this).val().substring(1));
+    });
+});
