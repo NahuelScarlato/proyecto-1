@@ -2,6 +2,9 @@
 var correctAnswers;
 var wrongAnswers;
 
+//Tema actual
+var theme=1;
+
 //Operandos soportados
 const operands = ['+', '-', '*', '/']
 

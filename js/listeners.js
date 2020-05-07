@@ -29,6 +29,30 @@ function sendAnswer(event) {
 answerInput = document.getElementById('answer');
 answerInput.addEventListener('keyup', sendAnswer);
 
+//Listeners de los boton de tema 1
+function selectTheme1() {
+    if(theme!=1) {
+        document.getElementById("theme-file").setAttribute("href","css/style1.css");
+        theme2Button.innerHTML = "Theme 2 (You have been warned)";
+        theme = 1;
+    }
+}
+
+theme1Button = document.getElementById('theme1-button');
+theme1Button.addEventListener('click', selectTheme1);
+
+//Listeners de los boton de tema 2
+function selectTheme2() {
+    if(theme!=2) {
+        document.getElementById("theme-file").setAttribute("href","css/style2.css");
+        theme2Button.innerHTML = "Theme 2 (Warned you...)";
+        theme = 2;
+    }
+}
+
+theme2Button = document.getElementById('theme2-button');
+theme2Button.addEventListener('click', selectTheme2);
+
 //Restringe la escritura de las respuestas a solo floats
 $('#answer').keypress(function(event) {
     if ((event.which != 46 || $(this).val().indexOf('.') != -1)

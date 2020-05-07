@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:title" content="EZ Math" />
     <meta property="og:description" content="Get here and do some EZ math with us" />
-    <meta property="og:image" content="logo.png" />
+    <meta property="og:image" content="media/logo.png" />
+
+    <link rel="shortcut icon" type="image/png" href="media/favicon.png"/>
 
     <!-- CSS -->
     <!-- Custom -->
     <link rel="stylesheet" href="css/app.css">
+    <link id="theme-file" rel="stylesheet" href="css/style1.css">
 
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/5889eb287d.js" crossorigin="anonymous"></script>
@@ -23,7 +26,7 @@
     <div id="background" class="d-flex">
       <div class="text-center m-auto">
         <div id="title" class="m-5">
-          <img src="logo.png">
+          <img src="media/logo.png">
         </div>
         <div id="welcome-panel" class="jumbotron">
           <h1 class="display-3">Gotta math fast!</h1>
@@ -40,8 +43,8 @@
                 <h2 class="text-success col">Correct</h2>
                 <div id="operation-panel" class="col-6">
                   <div class="badge badge-secondary text-wrap p-1 pb-2">
-                    <h3 id="new-op" class="d-inline"></h3>
-                    <h3 class="d-inline"> = </h3>
+                    <h3 id="new-op" class="d-inline ml-2"></h3>
+                    <h3 class="d-inline mr-2"> = </h3>
                   </div>
                   <input id="answer" class="d-inline w-50 text-center border-0 rounded p-1" placeholder="Answer" maxlength="8"></input>
                 </div>
@@ -51,7 +54,7 @@
                 <h3 id="correct-answers" class="text-secondary col"></h3>
                 <div id="previous-panel" class="col-6 invisible">
                   <div class="badge badge-secondary text-wrap">
-                    <h4 id="previous-op" class="d-inline"></h4>
+                    <h4 id="previous-op" class="d-inline mx-1"></h4>
                   </div>
                   <div class="badge badge-success text-wrap">
                     <h4 id="true-answer" class="d-inline"></h4>
@@ -65,8 +68,8 @@
         </div>
         <div class="d-block p-1">
           <div id="themes-panel" class="btn-group" role="group" aria-label="Themes">
-            <button type="button" class="btn btn-warning font-weight-bold">Theme 1</button>
-            <button type="button" class="btn btn-dark font-weight-bold">Theme 2</button>
+            <button id="theme1-button" type="button" class="btn btn-dark font-weight-bold">Theme 1</button>
+            <button id="theme2-button" type="button" class="btn btn-warning font-weight-bold">Theme 2 (Get sun glasses)</button>
           </div>
         </div>
         <div class="d-block p-1 pb-3">

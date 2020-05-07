@@ -1,0 +1,12 @@
+html, body {
+    font-family: Verdana !important;
+    color: white !important;
+}
+
+.fill {
+    background-image: url(../media/background2.jpg);
+}
+
+.jumbotron {
+    background-color: black !important;
+}
