@@ -53,16 +53,23 @@ function selectTheme2() {
 theme2Button = document.getElementById('theme2-button');
 theme2Button.addEventListener('click', selectTheme2);
 
-//Restringe la escritura de las respuestas a solo floats
+//Restringe la escritura de las respuestas a solo floats negativos
 $('#answer').keypress(function(event) {
-    if ((event.which != 46 || $(this).val().indexOf('.') != -1)
-        && (event.which < 48 || event.which > 57)
-        || (event.which == 46 && $(this).caret().start == 0))
+    if ((event.which != 46 || $(this).val().indexOf('.') != -1) &&
+        (event.which != 45 || $(this).val().indexOf('-') != -1) &&
+        (event.which < 48 || event.which > 57))
         event.preventDefault();
   
     //Este evento elimina los casos en que el punto (.) acaba en la posicion mas a la izq
     $('#answer').keyup(function(e) {
-      if ($(this).val().indexOf('.') == 0) 
+      if ($(this).val().indexOf('.') == 0)
         $(this).val($(this).val().substring(1));
     });
+
+    //Este evento elimina los casos en que el menos (-) acaba en otra posicion que no sea la incial
+    $('#answer').keyup(function(e) {
+        if ($(this).val().indexOf('-') != 0 && 
+            $(this).val().indexOf('-') != -1)
+          $(this).val($(this).val().substring(1));
+      });
 });
